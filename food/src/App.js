@@ -1,14 +1,19 @@
 import "./App.css";
 import Header from "./Components/Header/Header";
-// import Carousel from "./Components/Carousel/Carousel";
+import Donation from "./Components/Donation/Donation";
 import Slider from "./Components/Slider/Slider";
+import { Routes, Route, BrowserRouter } from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
-      <Header />
-      <Slider />
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <Routes>
+          <Route path="/" element={[<Header />, <Slider />]} />
+          <Route path="/donation" element={<Donation />} />
+        </Routes>
+      </div>
+    </BrowserRouter>
   );
 }
 
