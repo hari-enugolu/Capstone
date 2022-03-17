@@ -1,7 +1,7 @@
-* {
-  align-items: center;
+.App {
+  margin: 0 auto;
 }
-.list-orders {
+.donate-heading {
   max-width: 600px;
   margin: 0 auto;
 }

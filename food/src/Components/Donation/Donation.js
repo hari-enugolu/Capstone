@@ -1,6 +1,7 @@
 import "./Donation.css";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import Header from "../Header/Header";
 
 function App() {
   const [loading, setLoading] = useState(false);
@@ -74,48 +75,28 @@ function App() {
   }
 
   return (
-    <div className="App">
-      <h1> Razorpay Example: Node & React</h1>
-      <hr />
-      <div>
-        <h2> Pay Order</h2>
-        <label>
-          Amount:{" "}
-          <input
-            placeholder="INR"
-            type="number"
-            value={orderAmount}
-            onChange={(e) => setOrderAmount(e.target.value)}
-          ></input>
-        </label>
+    <div className="Header">
+      <Header />
+      <div className="App">
+        <h1 className="donate-heading">Donate to feed people in hunger</h1>
+        <hr />
+        <div className="donate-heading">
+          <h2> Pay Order</h2>
+          <form>
+            Amount:{" "}
+            <input
+              placeholder="INR"
+              type="number"
+              value={orderAmount}
+              onChange={(e) => setOrderAmount(e.target.value)}
+            ></input>
+          </form>
 
-        <button disabled={loading} onClick={loadRazorpay}>
-          Razorpay
-        </button>
-        {loading && <div>Loading...</div>}
-      </div>
-      <div className="list-orders">
-        <h2>List Orders</h2>
-        <table>
-          <thead>
-            <tr>
-              <th>ID</th>
-              <th>AMOUNT</th>
-              <th>ISPAID</th>
-              <th>RAZORPAY</th>
-            </tr>
-          </thead>
-          <tbody>
-            {orders.map((x) => (
-              <tr key={x._id}>
-                <td>{x._id}</td>
-                <td>{x.amount / 100}</td>
-                <td>{x.isPaid ? "YES" : "NO"}</td>
-                <td>{x.razorpay.paymentId}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+          <button disabled={loading} onClick={loadRazorpay}>
+            Donate
+          </button>
+          {loading && <div>Loading...</div>}
+        </div>
       </div>
     </div>
   );

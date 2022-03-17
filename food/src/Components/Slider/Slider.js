@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import SliderContent from "./SliderContent";
-import Arrows from "./Arrows";
+// import Arrows from "./Arrows";
 import "./slider.css";
 import sliderImage from "./sliderImage";
 
@@ -19,14 +19,6 @@ function Slider() {
   return (
     <div className="slider-container">
       <SliderContent activeIndex={activeIndex} sliderImage={sliderImage} />
-      <Arrows
-        prevSlide={() =>
-          setActiveIndex(activeIndex < 1 ? len : activeIndex - 1)
-        }
-        nextSlide={() =>
-          setActiveIndex(activeIndex === len ? 0 : activeIndex + 1)
-        }
-      />
     </div>
   );
 }
