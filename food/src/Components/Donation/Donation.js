@@ -77,27 +77,47 @@ function App() {
   return (
     <div className="Header">
       <Header />
+      <hr />
       <div className="App">
-        <h1 className="donate-heading">Donate to feed people in hunger</h1>
-        <hr />
-        <div className="donate-heading">
-          <h2> Pay Order</h2>
-          <form>
-            Amount:{" "}
-            <input
-              placeholder="INR"
-              type="number"
-              value={orderAmount}
-              onChange={(e) => setOrderAmount(e.target.value)}
-            ></input>
-          </form>
+        <div>
+          <h1 className="donate-header">Donate to feed people in hunger</h1>
+        </div>
+        <div>
+          <div id="form-view" className="donate-heading">
+            <form className="form">
+              <div>
+                <div className="form">
+                  Email <span style={{ text: "secondary" }}>(optional)</span>
+                </div>
+                <input placeholder="email"></input>
+              </div>
+              <div className="form">
+                Phone
+                <span>(optional)</span>
+              </div>
 
-          <button disabled={loading} onClick={loadRazorpay}>
-            Donate
-          </button>
-          {loading && <div>Loading...</div>}
+              <div>
+                <input placeholder="number"></input>
+              </div>
+              <div className="form">Amount</div>
+              <div>
+                <input
+                  placeholder="INR"
+                  type="number"
+                  value={orderAmount}
+                  onChange={(e) => setOrderAmount(e.target.value)}
+                ></input>
+              </div>
+            </form>
+
+            <button className="form" disabled={loading} onClick={loadRazorpay}>
+              Donate
+            </button>
+            {loading && <div>Loading...</div>}
+          </div>
         </div>
       </div>
+      <div className="details-screen"> Donate Now</div>
     </div>
   );
 }

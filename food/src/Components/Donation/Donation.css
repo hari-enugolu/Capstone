@@ -1,7 +1,26 @@
 .App {
   margin: 0 auto;
 }
+
 .donate-heading {
-  max-width: 600px;
+  max-width: 200px;
   margin: 0 auto;
+}
+.donate-header {
+  max-width: 600px;
+  margin-left: 500px;
+  margin: 0 auto;
+}
+
+#form-view {
+  width: 100%;
+  margin-right: 500px;
+  float: right;
+}
+.form {
+  margin-top: 20px;
+}
+
+.details-screen {
+  margin-bottom: 500px;
 }
