@@ -5,6 +5,7 @@ import Slider from "./Components/Slider/Slider";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import Footer from "./Components/Footer/Footer";
 import Home from "./Components/Home/Home";
+import Maps from "./Components/Maps/Maps";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
             element={[<Header />, <Slider />, <Home />, <Footer />]}
           />
           <Route path="/donation" element={[<Donation />]} />
+          <Route path="/orders" element={[<Maps />]} />
         </Routes>
       </div>
     </BrowserRouter>
