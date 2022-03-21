@@ -1,0 +1,7 @@
+.Home-image {
+  max-width: 100%;
+  max-height: fit-content;
+  margin: auto;
+  justify-content: center;
+  opacity: 0.7;
+}

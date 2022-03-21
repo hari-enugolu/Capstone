@@ -12,6 +12,7 @@ function App() {
     const { data } = await axios.get("/list-orders");
     setOrders(data);
   }
+
   useEffect(() => {
     fetchOrders();
   }, []);
@@ -117,7 +118,25 @@ function App() {
           </div>
         </div>
       </div>
-      <div className="details-screen"> Donate Now</div>
+      <div className="donation-details">
+        <h2 className="details-screen" style={{ color: "green" }}>
+          Donate For Cause
+        </h2>
+        <h4 className="food-wate">
+          Did you know that about 40 % of the food produced in India is wasted?
+        </h4>
+        <h4 className="food-waste-money">
+          Despite adequate food production, the UN has reported that about 190
+          million Indians remain undernourished. It is further estimated that
+          the value of food wastage in India is around ₹92,000 crores per annum.
+        </h4>
+        <h4 className="food-waste-steps">
+          The world recognises that no truly sustainable and developed country
+          can exist without tackling the issue of food waste, and while the
+          challenge in front of us may be monumental, some steps need to be
+          taken sooner than others.
+        </h4>
+      </div>
     </div>
   );
 }

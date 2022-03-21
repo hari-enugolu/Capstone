@@ -5,6 +5,8 @@
 .donate-heading {
   max-width: 200px;
   margin: 0 auto;
+  background: rgb(131, 165, 121);
+  height: 300px;
 }
 .donate-header {
   max-width: 600px;
@@ -14,13 +16,40 @@
 
 #form-view {
   width: 100%;
-  margin-right: 500px;
+  margin-right: 400px;
   float: right;
+  margin-top: 80px;
 }
 .form {
   margin-top: 20px;
 }
 
+.donation-details {
+  display: block;
+  background: rgb(132, 103, 103);
+}
+
 .details-screen {
-  margin-bottom: 500px;
+  margin-left: 60px;
+  margin-top: 80px;
+}
+
+.donation-details {
+  width: 40%;
+  height: auto;
+}
+
+.food-waste-money {
+  margin-top: 10px;
+  margin-left: 60px;
+}
+
+.food-wate {
+  margin-top: 10px;
+  margin-left: 60px;
+}
+
+.food-waste-steps {
+  margin-top: 10px;
+  margin-left: 60px;
 }
