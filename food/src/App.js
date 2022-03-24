@@ -6,6 +6,7 @@ import { Routes, Route, BrowserRouter } from "react-router-dom";
 import Footer from "./Components/Footer/Footer";
 import Home from "./Components/Home/Home";
 import Maps from "./Components/Maps/Maps";
+// import Email from "./Components/Email/Email";
 
 function App() {
   return (

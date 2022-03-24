@@ -79,63 +79,70 @@ function App() {
     <div className="Header">
       <Header />
       <hr />
-      <div className="App">
-        <div>
-          <h1 className="donate-header">Donate to feed people in hunger</h1>
-        </div>
-        <div>
-          <div id="form-view" className="donate-heading">
-            <form className="form">
-              <div>
-                <div className="form">
-                  Email <span style={{ text: "secondary" }}>(optional)</span>
+      <div className="image">
+        <div className="App">
+          <div>
+            <h1 className="donate-header">Donate to feed people in hunger</h1>
+          </div>
+          <div>
+            <div id="form-view" className="donate-heading">
+              <form className="form">
+                <div>
+                  <div className="form">Email</div>
+                  <input type="email" placeholder="email"></input>
                 </div>
-                <input placeholder="email"></input>
-              </div>
-              <div className="form">
-                Phone
-                <span>(optional)</span>
-              </div>
+                <div className="form">Username</div>
+                <input type="text" placeholder="user_name"></input>
 
-              <div>
-                <input placeholder="number"></input>
-              </div>
-              <div className="form">Amount</div>
-              <div>
-                <input
-                  placeholder="INR"
-                  type="number"
-                  value={orderAmount}
-                  onChange={(e) => setOrderAmount(e.target.value)}
-                ></input>
-              </div>
-            </form>
+                <div className="form">
+                  Phone
+                  <span>(optional)</span>
+                </div>
+                <input type="number" placeholder="number"></input>
+                <div className="form">Amount</div>
+                <div>
+                  <input
+                    placeholder="INR"
+                    type="number"
+                    value={orderAmount}
+                    onChange={(e) => setOrderAmount(e.target.value)}
+                  ></input>
+                </div>
+              </form>
 
-            <button className="form" disabled={loading} onClick={loadRazorpay}>
-              Donate
-            </button>
-            {loading && <div>Loading...</div>}
+              <button
+                style={{ color: "green" }}
+                disabled={loading}
+                onClick={loadRazorpay}
+              >
+                Donate
+              </button>
+              {loading && <div>Loading...</div>}
+            </div>
           </div>
         </div>
-      </div>
-      <div className="donation-details">
-        <h2 className="details-screen" style={{ color: "green" }}>
-          Donate For Cause
-        </h2>
-        <h4 className="food-wate">
-          Did you know that about 40 % of the food produced in India is wasted?
-        </h4>
-        <h4 className="food-waste-money">
-          Despite adequate food production, the UN has reported that about 190
-          million Indians remain undernourished. It is further estimated that
-          the value of food wastage in India is around ₹92,000 crores per annum.
-        </h4>
-        <h4 className="food-waste-steps">
-          The world recognises that no truly sustainable and developed country
-          can exist without tackling the issue of food waste, and while the
-          challenge in front of us may be monumental, some steps need to be
-          taken sooner than others.
-        </h4>
+        <div className="donation-details">
+          <h2 className="details-screen" style={{ color: "green" }}>
+            Donate For Cause
+          </h2>
+          <h4 className="food-wate">
+            Did you know that about 40 % of the food produced in India is
+            wasted?
+          </h4>
+          <h4 className="food-waste-money">
+            Despite adequate food production, the UN has reported that about 190
+            million Indians remain undernourished. It is further estimated that
+            the value of food wastage in India is around ₹92,000 crores per
+            annum.
+          </h4>
+
+          <h4 className="food-waste-steps">
+            The world recognises that no truly sustainable and developed country
+            can exist without tackling the issue of food waste, and while the
+            challenge in front of us may be monumental, some steps need to be
+            taken sooner than others.
+          </h4>
+        </div>
       </div>
     </div>
   );

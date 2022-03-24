@@ -1,13 +1,16 @@
-.App {
-  margin: 0 auto;
+.image {
+  background-image: url(https://b.zmtcdn.com/data/o2_assets/b90ed7f7c7f06ce7a5b94b967d4ce3eb1621255947.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100%;
+  max-height: 100%;
+  margin-bottom: 100px;
 }
 
 .donate-heading {
-  max-width: 200px;
-  margin: 0 auto;
-  background: rgb(131, 165, 121);
-  height: 300px;
+  max-width: 300px;
 }
+
 .donate-header {
   max-width: 600px;
   margin-left: 500px;
@@ -16,17 +19,19 @@
 
 #form-view {
   width: 100%;
-  margin-right: 400px;
+  margin-right: 300px;
   float: right;
   margin-top: 80px;
 }
+
 .form {
   margin-top: 20px;
+  color: white;
 }
 
 .donation-details {
   display: block;
-  background: rgb(132, 103, 103);
+  margin-bottom: 200px;
 }
 
 .details-screen {
@@ -37,6 +42,7 @@
 .donation-details {
   width: 40%;
   height: auto;
+  color: white;
 }
 
 .food-waste-money {
