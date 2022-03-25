@@ -2,6 +2,7 @@ import "./Donation.css";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import Header from "../Header/Header";
+import emailjs from "emailjs-com";
 
 function App() {
   const [loading, setLoading] = useState(false);
@@ -16,6 +17,23 @@ function App() {
   useEffect(() => {
     fetchOrders();
   }, []);
+
+  function sendEmail(e) {
+    e.preventDefault();
+    return emailjs
+      .sendform(
+        "service_8n9ucoo",
+        "template_1xrg8ge",
+        e.target,
+        "user_YPTEpTAF2CkKRxEjG"
+      )
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }
 
   function loadRazorpay() {
     const script = document.createElement("script");
@@ -113,7 +131,10 @@ function App() {
               <button
                 style={{ color: "green" }}
                 disabled={loading}
-                onClick={loadRazorpay}
+                onClick={() => {
+                  loadRazorpay();
+                  sendEmail();
+                }}
               >
                 Donate
               </button>
