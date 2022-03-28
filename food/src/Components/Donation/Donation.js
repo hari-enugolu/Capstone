@@ -2,6 +2,8 @@ import "./Donation.css";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import Header from "../Header/Header";
+import VideoPlayer from "react-video-js-player";
+import foodwaste from "./Foodwaste.mp4";
 import emailjs from "emailjs-com";
 
 function App() {
@@ -163,6 +165,20 @@ function App() {
             challenge in front of us may be monumental, some steps need to be
             taken sooner than others.
           </h4>
+          <h4 className="food-waste-steps">
+            Reducing and eventually eliminating food waste needs to be
+            incentivised and encouraged across key sources such as restaurants,
+            banquets, weddings, canteens, and retail outlets. Partnerships
+            should be formed with all stakeholders to identify how to do this.
+            Eventually, each city should have a plan in place to tackle food
+            waste.
+          </h4>
+          <h4 className="food-waste-steps">
+            Everyone must join hands if we are to work towards a truly
+            sustainable India that does not have millions undernourished despite
+            having adequate food production.
+          </h4>
+          <VideoPlayer className="video" src={foodwaste}></VideoPlayer>
         </div>
       </div>
     </div>
