@@ -5,6 +5,10 @@ import Header from "../Header/Header";
 import VideoPlayer from "react-video-js-player";
 import foodwaste from "./Foodwaste.mp4";
 import emailjs from "emailjs-com";
+import image1 from "./food waste graph.JPG";
+import image2 from "./food loss food waste.JPG";
+import image3 from "./food waste recycle.jpg";
+import Footer from "../Footer/Footer";
 
 function App() {
   const [loading, setLoading] = useState(false);
@@ -131,7 +135,7 @@ function App() {
               </form>
 
               <button
-                style={{ color: "green" }}
+                style={{ backgroundColor: "Highlight" }}
                 disabled={loading}
                 onClick={() => {
                   loadRazorpay();
@@ -178,8 +182,52 @@ function App() {
             sustainable India that does not have millions undernourished despite
             having adequate food production.
           </h4>
-          <VideoPlayer className="video" src={foodwaste}></VideoPlayer>
         </div>
+      </div>
+      <div images>
+        <img className="images-statistics" src={image1} alt="">
+          {/* <h2> How much food we waste</h2> */}
+        </img>
+        <img src={image2} alt=""></img>
+        <img
+          src={image3}
+          alt=""
+          style={{ width: "500px", height: "430px" }}
+        ></img>
+      </div>
+      <li className="data-satistics">
+        33% of food is wasting in the available food for us.Around one-third of
+        the world’s food is lost to waste or 1.3 billion tons per year.
+      </li>
+      <li className="data-satistics">
+        Saving even just a fourth of the total global food waste volume can feed
+        all the world’s hungry.
+      </li>
+      <li className="data-satistics">
+        Mostly the food waste is happening in storing the raw food.{" "}
+      </li>
+      <li className="data-satistics">
+        As we can see in the graph 72% food loss is happening before it is
+        reaching to anyone.
+      </li>
+      <li className="data-satistics">
+        If we can follow the food waste cycle that is shown in the picture we
+        can save food that feed atleast 70% of the people who are suffering lack
+        of food.
+      </li>
+      <li className="data-satistics">
+        Hence we encourage all people to not waste food and keep donating food.
+      </li>
+
+      <div>
+        <VideoPlayer
+          className="video"
+          src={foodwaste}
+          poster="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.e0yhGmjZ3CvTojnjpsfg6QHaE6%26pid%3DApi&f=1"
+        ></VideoPlayer>
+        <h3 className="videotag">
+          A small Video to explain food wastage and its impacts
+        </h3>
       </div>
     </div>
   );
