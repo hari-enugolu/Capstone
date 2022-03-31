@@ -8,22 +8,24 @@ import emailjs from "emailjs-com";
 import image1 from "./food waste graph.JPG";
 import image2 from "./food loss food waste.JPG";
 import image3 from "./food waste recycle.jpg";
-import Footer from "../Footer/Footer";
 
 function App() {
   const [loading, setLoading] = useState(false);
   const [orderAmount, setOrderAmount] = useState(0);
-  const [orders, setOrders] = useState([]);
+  // const [orders, setOrders] = useState([]);
 
-  async function fetchOrders() {
-    const { data } = await axios.get("/list-orders");
-    setOrders(data);
-  }
+  //fetching orders by connecting to backend
+  // async function fetchOrders() {
+  //   const { data } = await axios.get("/list-orders");
+  //   setOrders(data);
+  // }
 
-  useEffect(() => {
-    fetchOrders();
-  }, []);
+  // to show orders list in frontend
+  // useEffect(() => {
+  //   fetchOrders();
+  // }, []);
 
+  //to send Email to users after donating using EmailJs
   function sendEmail(e) {
     e.preventDefault();
     return emailjs
@@ -41,16 +43,18 @@ function App() {
       });
   }
 
+  //
   function loadRazorpay() {
-    const script = document.createElement("script");
-    script.src = "https://checkout.razorpay.com/v1/checkout.js";
+    const script = document.createElement("script"); //creating script element
+    script.src = "https://checkout.razorpay.com/v1/checkout.js"; //source coming from razorpay
     script.onerror = () => {
-      alert("Razorpay SDK failed to load. Are you online?");
+      alert("Razorpay SDK failed to load. Are you online?"); //show error if not loaded or any trouble in loading script
     };
     script.onload = async () => {
       try {
-        setLoading(true);
+        setLoading(true); //loading is true then only ceates
         const result = await axios.post("/create-order", {
+          //creating order which passes amount to api coming from frontend
           amount: orderAmount + "00",
         });
         const { amount, id: order_id, currency } = result.data;
@@ -66,19 +70,21 @@ function App() {
           description: "example transaction",
           order_id: order_id,
           handler: async function (response) {
+            //when the payment is successful passes the data to api
             const result = await axios.post("/pay-order", {
               amount: amount,
               razorpayPaymentId: response.razorpay_payment_id,
               razorpayOrderId: response.razorpay_order_id,
               razorpaySignature: response.razorpay_signature,
             });
-            alert(result.data.msg);
-            fetchOrders();
+            alert(result.data.msg); //alert to user that payment is successful
+            // fetchOrders();                //to show new payments in the frontend
           },
           prefill: {
-            name: "example name",
+            //prefill section to set dummy details in razorpay window
+            name: " name",
             email: "email@example.com",
-            contact: "111111",
+            contact: "1111111111",
           },
           notes: {
             address: "example address",
@@ -89,14 +95,14 @@ function App() {
         };
 
         setLoading(false);
-        const paymentObject = new window.Razorpay(options);
-        paymentObject.open();
+        const paymentObject = new window.Razorpay(options); //goes to new window of razorpay
+        paymentObject.open(); // and opens
       } catch (err) {
         alert(err);
         setLoading(false);
       }
     };
-    document.body.appendChild(script);
+    document.body.appendChild(script); // adding script after onload
   }
 
   return (
@@ -113,10 +119,18 @@ function App() {
               <form className="form">
                 <div>
                   <div className="form">Email</div>
-                  <input type="email" placeholder="email"></input>
+                  <input
+                    type="email"
+                    placeholder="email"
+                    required="true"
+                  ></input>
                 </div>
                 <div className="form">Username</div>
-                <input type="text" placeholder="user_name"></input>
+                <input
+                  type="text"
+                  placeholder="user_name"
+                  required="true"
+                ></input>
 
                 <div className="form">
                   Phone
@@ -135,7 +149,7 @@ function App() {
               </form>
 
               <button
-                style={{ backgroundColor: "Highlight" }}
+                style={{ backgroundColor: "skyblue", color: "black" }}
                 disabled={loading}
                 onClick={() => {
                   loadRazorpay();
@@ -153,8 +167,7 @@ function App() {
             Donate For Cause
           </h2>
           <h4 className="food-wate">
-            Did you know that about 40 % of the food produced in India is
-            wasted?
+            Did you know that about 40% of the food produced in India is wasted?
           </h4>
           <h4 className="food-waste-money">
             Despite adequate food production, the UN has reported that about 190

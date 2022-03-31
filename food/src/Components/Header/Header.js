@@ -32,7 +32,9 @@ export default function Header() {
 
       <Link to="donation" style={{ textDecoration: "none" }}>
         <div className="header_option">
-          <span className="header_optionLineOne">Donate </span>
+          <span className="header_optionLineOne" id="donate-option">
+            Donate{" "}
+          </span>
         </div>
       </Link>
 

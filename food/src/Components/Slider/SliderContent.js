@@ -6,7 +6,7 @@ function SliderContent({ activeIndex, sliderImage }) {
       {sliderImage.map((slide, index) => (
         <div
           key={index}
-          className={index === activeIndex ? "slides active" : "inactive"}
+          className={index === activeIndex ? " active" : "inactive"}
         >
           <h2 className="slide-title">{slide.title}</h2>
         </div>
