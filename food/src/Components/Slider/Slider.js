@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from "react";
 import SliderContent from "./SliderContent";
-// import Arrows from "./Arrows";
 import "./slider.css";
 import sliderImage from "./sliderImage";
 
-const len = sliderImage.length - 1;
+const len = sliderImage.length - 1; //length of the image -1
+// console.log(sliderImage.length - 1);
 
 function Slider() {
   const [activeIndex, setActiveIndex] = useState(0);
+  // console.log(activeIndex);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -15,7 +16,7 @@ function Slider() {
     }, 5000);
     return () => clearInterval(interval);
   }, [activeIndex]);
-
+  // console.log(setActiveIndex);
   return (
     <div className="slider-container">
       <SliderContent activeIndex={activeIndex} sliderImage={sliderImage} />

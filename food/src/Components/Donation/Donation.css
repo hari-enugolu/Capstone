@@ -23,16 +23,24 @@
   margin-right: 300px;
   float: right;
   margin-top: 80px;
+  padding: 60px;
+  background-color: black;
+  opacity: 0.6;
 }
 
 .form {
   margin-top: 20px;
-  color: white;
+  color: rgb(10, 191, 46);
+  font-weight: 500;
 }
 
 .donation-details {
   display: block;
   /* margin-bottom: 200px; */
+}
+
+.donate-button {
+  background-color: brown;
 }
 
 .details-screen {
@@ -59,4 +67,35 @@
 .food-waste-steps {
   margin-top: 10px;
   margin-left: 60px;
+}
+
+.video {
+  width: 700px;
+  height: 400px;
+  margin-left: 350px;
+  margin-top: 70px;
+  margin-bottom: 50px;
+}
+
+.images-statistics {
+  margin-top: 0px;
+}
+
+.images {
+  background-color: rgb(128, 209, 88);
+}
+
+.data-satistics {
+  align-items: center;
+  justify-content: center;
+  margin-left: 200px;
+  color: green;
+  font-weight: 500;
+  font-size: large;
+}
+
+.videotag {
+  margin-left: 450px;
+  margin-bottom: 150px;
+  margin-top: 0px;
 }
