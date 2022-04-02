@@ -82,15 +82,15 @@ function App() {
           },
           prefill: {
             //prefill section to set dummy details in razorpay window
-            name: " name",
-            email: "email@example.com",
+            name: "yourname",
+            email: "yourmail@gmail.com",
             contact: "1111111111",
           },
           notes: {
-            address: "example address",
+            address: "your address",
           },
           theme: {
-            color: "#80c0f0",
+            color: "white",
           },
         };
 
